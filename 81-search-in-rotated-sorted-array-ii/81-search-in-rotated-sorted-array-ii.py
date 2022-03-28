@@ -1,6 +1,6 @@
 class Solution:
     def search(self, nums: List[int], target: int) -> bool:
-        nums = sorted(set(nums))
+        nums = sorted(nums)
         low, high = 0, len(nums) - 1
         while(low <= high):
             mid = (low-high)// 2 + high
