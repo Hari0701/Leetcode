@@ -1,6 +1,8 @@
 class Solution:
     def findDuplicate(self, nums: List[int]) -> int:
-        nums.sort()
-        for i in range(1, len(nums)):
-            if nums[i] == nums[i-1]:
-                return nums[i]
+        freq = {}
+        for i in nums:
+            freq[i] = freq[i] + 1 if i in freq  else 1
+        for idx, value in freq.items():       
+            if value >= 2:
+                return idx
