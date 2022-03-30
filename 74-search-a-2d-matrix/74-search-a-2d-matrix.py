@@ -12,7 +12,6 @@ class Solution:
                         high = mid - 1
                     elif(matrix[i][mid] < target):
                         low = low + 1
-                    elif(matrix[i][mid]  == target):
-                        return True
                     else:
-                        return False
+                        return True
+                return False     
