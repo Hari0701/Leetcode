@@ -8,8 +8,7 @@ class Solution:
         res, cur = head, head.next
         while cur.next:
             if cur.val:
-                res.val += cur.val
-                
+                res.val += cur.val 
             else:
                 res.next = res = cur
             cur = cur.next
