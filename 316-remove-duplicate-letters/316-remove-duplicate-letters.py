@@ -3,8 +3,7 @@ class Solution:
         index = {}
         stack = []
         for i, v in enumerate(s):
-            index[v] = i
-        print(index)     
+            index[v] = i     
         for i, v in enumerate(s):
             if s[i] in stack:
                 continue
