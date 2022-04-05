@@ -1,14 +1,28 @@
+# Definition for singly-linked list.
+# class ListNode:
+#     def __init__(self, val=0, next=None):
+#         self.val = val
+#         self.next = next
 class Solution:
     def swapNodes(self, head: Optional[ListNode], k: int) -> Optional[ListNode]:
-        # Find kth node from left
-        l = r = head
-        for _ in range(k-1):
-            l = l.next
-        # Find kth node from right
-        # by finding tail node
-        tail = l
-        while tail.next:
-            r, tail = r.next, tail.next
-        # Swap values and return
-        l.val, r.val = r.val, l.val
+        counter=res=cur= head
+        end = start = 0
+        count = 1
+        while counter.next != None:
+            count += 1
+            counter = counter.next
+            
+        while start < k -1:
+            res = res.next
+            start += 1
+            
+        idx = count - k  + 1
+        while end < idx -1:
+            cur = cur.next
+            end += 1
+            
+        res.val, cur.val = cur.val, res.val
         return head
+        
+            
+            
