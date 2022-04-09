@@ -9,18 +9,17 @@ class Solution:
         num2 = ""
         root = None
         
-        while l1.next != None:
-            num1 += str(l1.val)
-            l1 = l1.next
+        while l1.next != None or l2.next != None:
+            if l1.next != None:
+                num1 += str(l1.val)
+                l1 = l1.next
+            if l2.next != None:  
+                num2 += str(l2.val)
+                l2 = l2.next
         num1 += str(l1.val)  
-        
-        while l2.next != None:
-            num2 += str(l2.val)
-            l2 = l2.next
-        num2 += str(l2.val) 
-        
-        num1, num2 = int(num1[::-1]), int(num2[::-1])
-        val = num1 + num2
+        num2 += str(l2.val)
+
+        val = int(num1[::-1]) + int(num2[::-1])
         
         def insert(root, item):
             temp = ListNode(item)
